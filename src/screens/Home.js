@@ -9,6 +9,7 @@ import {
   ScrollView,
   TouchableOpacity,
   ImageBackground,
+  StatusBar
 } from 'react-native';
 
 import search from '../assets/img/search.png';
@@ -23,6 +24,7 @@ export default class Home extends Component {
   render() {
     return (
       <ScrollView>
+      <StatusBar backgroundColor="#000" />
         <View style={style.headerWrapper}>
           <View style={style.headerTitleWrapper}>
             <Text style={style.headerTitle}>Hello, Mark</Text>
