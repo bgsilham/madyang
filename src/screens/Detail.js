@@ -49,14 +49,14 @@ export default class Detail extends Component {
       <ScrollView style={style.container}>
         <StatusBar backgroundColor="#000" />
         <View>
-          <TouchableOpacity style={style.btnIcoWrapper}>
+          <TouchableOpacity onPress={this.props.navigation.goBack} style={style.btnIcoWrapper}>
             <Image style={style.btnIco} source={back} />
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={style.btnTrending}>
           <Text style={style.btnTrendingTxt}>#1 - Trending this week</Text>
         </TouchableOpacity>
-        <Text style={style.menuTxt}>Boiled Egg Mint</Text>
+        <Text style={style.menuTxt}>{this.props.route.params.name}</Text>
         <YoutubePlayer
           height={200}
           play={false}
@@ -66,7 +66,7 @@ export default class Detail extends Component {
           <Image style={style.authorImg} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7UUD5_QfP3HFFTjOPEorII-S6WK-0Ux7GUQ&usqp=CAU'}} />
           <View>
             <Text style={style.authorHeaderTxt}>Recipe by</Text>
-            <Text style={style.authorNameTxt}>Samantha William</Text>
+            <Text style={style.authorNameTxt}>{this.props.route.params.author}</Text>
           </View>
         </View>
         <Text style={style.menuDescTxt}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum quis mauris vel aliquet. Aenean bibendum accumsan suscipit. Praesent justo dui, rutrum commodo risus at, cursus aliquet lectus. Mauris ut neque nunc. Etiam ultrices, orci non scelerisque malesuada, justo libero tincidunt nunc, id tempor leo erat a tellus.</Text>

@@ -22,6 +22,29 @@ const deviceWidth = Dimensions.get('screen').width;
 
 export default class Home extends Component {
   render() {
+    const menuList = [
+      {
+        author: 'Marry Smith',
+        name: 'Boiled Egg Mint',
+        diff: 'Easy',
+        min: 15,
+        image: lunch3,
+      },
+      {
+        author: 'Samantha William',
+        name: 'Vegetables Beef Onion',
+        diff: 'Normal',
+        min: 25,
+        image: lunch2,
+      },
+      {
+        author: 'John Doe',
+        name: 'Mix Vegetables Bread',
+        diff: 'Hard',
+        min: 15,
+        image: lunch1,
+      },
+    ]
     return (
       <ScrollView>
       <StatusBar backgroundColor="#000" />
@@ -130,60 +153,28 @@ export default class Home extends Component {
             <Text style={style.categoriesBtnDisTxt}>Indonesian</Text>
           </TouchableOpacity>
         </ScrollView>
-        <TouchableOpacity style={style.foodCard}>
-          <ImageBackground
-            imageStyle={style.foodImg}
-            style={style.foodImg}
-            source={lunch3}>
-            <View style={style.foodCardHederWrapper}>
-              <Text style={style.foodCardTxtHeader}>Marry Smith</Text>
-              <Text style={style.foodCardTxtHeader}>Easy</Text>
-            </View>
-            <View>
-              <Text style={style.foodCardTxtTitle}>Boiled Egg Mint</Text>
-              <View style={style.foodCardIcoWrapper}>
-                <Image style={style.foodCardIco} source={clock} />
-                <Text style={style.foodCardTxtHeader}>15 min</Text>
+        {menuList.map((val) => (
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail', 
+            {author: val.author, name: val.name} 
+          )} style={style.foodCard}>
+            <ImageBackground
+              imageStyle={style.foodImg}
+              style={style.foodImg}
+              source={val.image}>
+              <View style={style.foodCardHederWrapper}>
+                <Text style={style.foodCardTxtHeader}>{val.author}</Text>
+                <Text style={style.foodCardTxtHeader}>{val.diff}</Text>
               </View>
-            </View>
-          </ImageBackground>
-        </TouchableOpacity>
-        <TouchableOpacity style={style.foodCard}>
-          <ImageBackground
-            imageStyle={style.foodImg}
-            style={style.foodImg}
-            source={lunch2}>
-            <View style={style.foodCardHederWrapper}>
-              <Text style={style.foodCardTxtHeader}>Samantha William</Text>
-              <Text style={style.foodCardTxtHeader}>Normal</Text>
-            </View>
-            <View>
-              <Text style={style.foodCardTxtTitle}>Vegetables Beef Onion</Text>
-              <View style={style.foodCardIcoWrapper}>
-                <Image style={style.foodCardIco} source={clock} />
-                <Text style={style.foodCardTxtHeader}>25 min</Text>
+              <View>
+                <Text style={style.foodCardTxtTitle}>{val.name}</Text>
+                <View style={style.foodCardIcoWrapper}>
+                  <Image style={style.foodCardIco} source={clock} />
+                  <Text style={style.foodCardTxtHeader}>{val.min} min</Text>
+                </View>
               </View>
-            </View>
-          </ImageBackground>
-        </TouchableOpacity>
-        <TouchableOpacity style={style.foodCard}>
-          <ImageBackground
-            imageStyle={style.foodImg}
-            style={style.foodImg}
-            source={lunch1}>
-            <View style={style.foodCardHederWrapper}>
-              <Text style={style.foodCardTxtHeader}>John Doe</Text>
-              <Text style={style.foodCardTxtHeader}>Hard</Text>
-            </View>
-            <View>
-              <Text style={style.foodCardTxtTitle}>Mix Vegetables Bread</Text>
-              <View style={style.foodCardIcoWrapper}>
-                <Image style={style.foodCardIco} source={clock} />
-                <Text style={style.foodCardTxtHeader}>15 min</Text>
-              </View>
-            </View>
-          </ImageBackground>
-        </TouchableOpacity>
+            </ImageBackground>
+          </TouchableOpacity>
+        ))}
       </ScrollView>
     );
   }
