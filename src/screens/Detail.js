@@ -9,6 +9,7 @@ import {
   StatusBar,
   ScrollView,
 } from 'react-native';
+import YoutubePlayer from "react-native-youtube-iframe";
 
 import back from '../assets/img/back.png';
 import save from '../assets/img/save.png';
@@ -56,7 +57,11 @@ export default class Detail extends Component {
           <Text style={style.btnTrendingTxt}>#1 - Trending this week</Text>
         </TouchableOpacity>
         <Text style={style.menuTxt}>Boiled Egg Mint</Text>
-        <View style={style.iframeWrapper}/>
+        <YoutubePlayer
+          height={200}
+          play={false}
+          videoId={"iee2TATGMyI"}
+        />
         <View style={style.authorWrapper}>
           <Image style={style.authorImg} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7UUD5_QfP3HFFTjOPEorII-S6WK-0Ux7GUQ&usqp=CAU'}} />
           <View>
@@ -112,12 +117,7 @@ const style = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     letterSpacing: 1,
-  },
-  iframeWrapper: {
-    height: 200,
-    backgroundColor: 'pink',
-    borderRadius: 15,
-    marginTop: 10,
+    marginBottom: 10,
   },
   authorWrapper: {
     flexDirection: 'row',
