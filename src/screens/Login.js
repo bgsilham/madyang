@@ -42,11 +42,11 @@ class Login extends Component {
             easily!
           </Text>
           <TouchableOpacity onPress={this.login} style={styles.btnLogin}>
-            <Text style={styles.btnTxt}>Login</Text>
+            <Text style={styles.btnTxt}>Continue with Google</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnSignUp}>
+          {/* <TouchableOpacity style={styles.btnSignUp}>
             <Text style={styles.btnTxt}>Sign Up</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </ImageBackground>
       </View>
     );

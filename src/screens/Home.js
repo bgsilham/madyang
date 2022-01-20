@@ -22,9 +22,6 @@ import clock from '../assets/img/clock.png';
 const deviceWidth = Dimensions.get('screen').width;
 
 class Home extends Component {
-  componentDidMount() {
-    alert(JSON.stringify(this.props.auth.dataLogin))
-  }
   render() {
     const menuList = [
       {
@@ -57,14 +54,14 @@ class Home extends Component {
             <Text style={style.headerTitle}>Hello, {this.props.auth.dataLogin.givenName}</Text>
             <Text>What do you want to cook today?</Text>
           </View>
-          <View style={style.headerImgWrapper}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')} style={style.headerImgWrapper}>
             <Image
               style={style.img}
               source={{
                 uri: this.props.auth.dataLogin.photo,
               }}
             />
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={style.searchWrapper}>
           <View style={style.searchIcoWrapper}>

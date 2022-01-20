@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 import Login from './Login';
 import Home from './Home';
 import Detail from './Detail';
+import Profile from './Profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ class Index extends Component {
             <>
               <Stack.Screen options={{headerShown: false}} name="Home" component={Home} />
               <Stack.Screen options={{headerShown: false}} name="Detail" component={Detail} />
+              <Stack.Screen options={{headerShown: false}} name="Profile" component={Profile} />
             </>
           )}
         </Stack.Navigator>
