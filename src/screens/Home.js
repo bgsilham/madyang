@@ -26,24 +26,39 @@ class Home extends Component {
     const menuList = [
       {
         author: 'Marry Smith',
+        authorAva: 'https://duetaz.org/wp-content/uploads/2018/02/placeholder-woman.jpg',
         name: 'Boiled Egg Mint',
         diff: 'Easy',
         min: 15,
         image: lunch3,
+        yt: 'OzsCgmRsWMI',
+        category: 'Lunch',
+        trending: 1,
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum quis mauris vel aliquet. Aenean bibendum accumsan suscipit. Praesent justo dui, rutrum commodo risus at, cursus aliquet lectus. Mauris ut neque nunc. Etiam ultrices, orci non scelerisque malesuada, justo libero tincidunt nunc, id tempor leo erat a tellus.',
       },
       {
         author: 'Samantha William',
+        authorAva: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         name: 'Vegetables Beef Onion',
         diff: 'Normal',
         min: 25,
         image: lunch2,
+        yt: 'EfRpZ3GnvBM',
+        category: 'Dinner',
+        trending: 2,
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum quis mauris vel aliquet. Aenean bibendum accumsan suscipit. Praesent justo dui, rutrum commodo risus at, cursus aliquet lectus. Mauris ut neque nunc. Etiam ultrices, orci non scelerisque malesuada, justo libero tincidunt nunc, id tempor leo erat a tellus.',
       },
       {
         author: 'John Doe',
+        authorAva: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7UUD5_QfP3HFFTjOPEorII-S6WK-0Ux7GUQ&usqp=CAU',
         name: 'Mix Vegetables Bread',
         diff: 'Hard',
         min: 15,
         image: lunch1,
+        yt: 'y6gnXQJrB5Y',
+        category: 'Breakfast',
+        trending: 3,
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum quis mauris vel aliquet. Aenean bibendum accumsan suscipit. Praesent justo dui, rutrum commodo risus at, cursus aliquet lectus. Mauris ut neque nunc. Etiam ultrices, orci non scelerisque malesuada, justo libero tincidunt nunc, id tempor leo erat a tellus.',
       },
     ]
     return (
@@ -156,7 +171,14 @@ class Home extends Component {
         </ScrollView>
         {menuList.map((val) => (
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail', 
-            {author: val.author, name: val.name} 
+            {
+              author: val.author,
+              authorAva: val.authorAva,
+              name: val.name,
+              desc: val.desc,
+              yt: val.yt,
+              trending: val.trending,
+            } 
           )} style={style.foodCard}>
             <ImageBackground
               imageStyle={style.foodImg}

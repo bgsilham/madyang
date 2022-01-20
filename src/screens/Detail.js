@@ -54,22 +54,22 @@ export default class Detail extends Component {
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={style.btnTrending}>
-          <Text style={style.btnTrendingTxt}>#1 - Trending this week</Text>
+          <Text style={style.btnTrendingTxt}>#{this.props.route.params.trending} - Trending this week</Text>
         </TouchableOpacity>
         <Text style={style.menuTxt}>{this.props.route.params.name}</Text>
         <YoutubePlayer
           height={200}
           play={false}
-          videoId={"_wcKfq9XGVk"}
+          videoId={this.props.route.params.yt}
         />
         <View style={style.authorWrapper}>
-          <Image style={style.authorImg} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7UUD5_QfP3HFFTjOPEorII-S6WK-0Ux7GUQ&usqp=CAU'}} />
+          <Image style={style.authorImg} source={{uri: this.props.route.params.authorAva}} />
           <View>
             <Text style={style.authorHeaderTxt}>Recipe by</Text>
             <Text style={style.authorNameTxt}>{this.props.route.params.author}</Text>
           </View>
         </View>
-        <Text style={style.menuDescTxt}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum quis mauris vel aliquet. Aenean bibendum accumsan suscipit. Praesent justo dui, rutrum commodo risus at, cursus aliquet lectus. Mauris ut neque nunc. Etiam ultrices, orci non scelerisque malesuada, justo libero tincidunt nunc, id tempor leo erat a tellus.</Text>
+        <Text style={style.menuDescTxt}>{this.props.route.params.desc}</Text>
         <Text style={style.ingredientsHeadertxt}>Ingredients</Text>
         <View style={style.cardIngWrapper}>
           {dataIng.map((val) => (
