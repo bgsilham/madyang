@@ -7,14 +7,13 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {
-  GoogleSignin,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import {connect} from 'react-redux'
+import {dataLogin} from '../redux/actions/auth'
 
 import bg from '../assets/img/bg.png';
 
-export default class Login extends Component {
+class Login extends Component {
   login = () => {
     GoogleSignin.configure({
       androidClientId: '227289042674-ob8h7k17e1huljbu1b7mmp3p52oir7bc.apps.googleusercontent.com',
@@ -23,7 +22,7 @@ export default class Login extends Component {
     GoogleSignin.hasPlayServices().then((hasPlayService) => {
       if (hasPlayService) {
         GoogleSignin.signIn().then((userInfo) => {
-          alert(JSON.stringify(userInfo.user))
+          this.props.dataLogin(userInfo.user)
         }).catch((e) => {
         console.log("ERROR IS: " + JSON.stringify(e));
         })
@@ -53,6 +52,12 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+})
+const mapDispatchToProps = {dataLogin}
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 const styles = StyleSheet.create({
   container: {

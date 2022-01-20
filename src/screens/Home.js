@@ -11,6 +11,7 @@ import {
   ImageBackground,
   StatusBar
 } from 'react-native';
+import { connect } from 'react-redux';
 
 import search from '../assets/img/search.png';
 import lunch1 from '../assets/img/lunch1.png';
@@ -20,7 +21,10 @@ import clock from '../assets/img/clock.png';
 
 const deviceWidth = Dimensions.get('screen').width;
 
-export default class Home extends Component {
+class Home extends Component {
+  componentDidMount() {
+    alert(JSON.stringify(this.props.auth.dataLogin))
+  }
   render() {
     const menuList = [
       {
@@ -50,14 +54,14 @@ export default class Home extends Component {
       <StatusBar backgroundColor="#000" />
         <View style={style.headerWrapper}>
           <View style={style.headerTitleWrapper}>
-            <Text style={style.headerTitle}>Hello, Mark</Text>
+            <Text style={style.headerTitle}>Hello, {this.props.auth.dataLogin.givenName}</Text>
             <Text>What do you want to cook today?</Text>
           </View>
           <View style={style.headerImgWrapper}>
             <Image
               style={style.img}
               source={{
-                uri: 'https://www.caribbeangamezone.com/wp-content/uploads/2018/03/avatar-placeholder.png',
+                uri: this.props.auth.dataLogin.photo,
               }}
             />
           </View>
@@ -179,6 +183,11 @@ export default class Home extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+})
+export default connect(mapStateToProps)(Home)
 
 const style = StyleSheet.create({
   container: {
