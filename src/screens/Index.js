@@ -13,9 +13,9 @@ export default class Index extends Component {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen options={{headerShown: false}} name="Login" component={Login} />
           <Stack.Screen options={{headerShown: false}} name="Home" component={Home} />
           <Stack.Screen options={{headerShown: false}} name="Detail" component={Detail} />
-          <Stack.Screen options={{headerShown: false}} name="Login" component={Login} />
         </Stack.Navigator>
       </NavigationContainer>
     );

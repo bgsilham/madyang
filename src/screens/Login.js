@@ -7,10 +7,31 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
+import {
+  GoogleSignin,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
 
 import bg from '../assets/img/bg.png';
 
 export default class Login extends Component {
+  login = () => {
+    GoogleSignin.configure({
+      androidClientId: '227289042674-ob8h7k17e1huljbu1b7mmp3p52oir7bc.apps.googleusercontent.com',
+      iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',
+    });
+    GoogleSignin.hasPlayServices().then((hasPlayService) => {
+      if (hasPlayService) {
+        GoogleSignin.signIn().then((userInfo) => {
+          alert(JSON.stringify(userInfo.user))
+        }).catch((e) => {
+        console.log("ERROR IS: " + JSON.stringify(e));
+        })
+      }
+    }).catch((e) => {
+      console.log("ERROR IS: " + JSON.stringify(e));
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -21,7 +42,7 @@ export default class Login extends Component {
             Discover more than 1000+ food recipes in you hands and cooking it
             easily!
           </Text>
-          <TouchableOpacity style={styles.btnLogin}>
+          <TouchableOpacity onPress={this.login} style={styles.btnLogin}>
             <Text style={styles.btnTxt}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnSignUp}>

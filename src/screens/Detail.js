@@ -60,7 +60,7 @@ export default class Detail extends Component {
         <YoutubePlayer
           height={200}
           play={false}
-          videoId={"iee2TATGMyI"}
+          videoId={"_wcKfq9XGVk"}
         />
         <View style={style.authorWrapper}>
           <Image style={style.authorImg} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7UUD5_QfP3HFFTjOPEorII-S6WK-0Ux7GUQ&usqp=CAU'}} />

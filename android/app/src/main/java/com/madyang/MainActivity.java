@@ -1,4 +1,4 @@
-package com.madyang;
+package com.ilhambagas.madyang;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
