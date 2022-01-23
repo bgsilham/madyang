@@ -34,7 +34,7 @@ class Home extends Component {
         yt: 'OzsCgmRsWMI',
         category: 'Lunch',
         trending: 1,
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum quis mauris vel aliquet. Aenean bibendum accumsan suscipit. Praesent justo dui, rutrum commodo risus at, cursus aliquet lectus. Mauris ut neque nunc. Etiam ultrices, orci non scelerisque malesuada, justo libero tincidunt nunc, id tempor leo erat a tellus.',
+        desc: "A spicy & flavorful Indian Egg Curry with boiled eggs cooked in mint leaves, Indian whole spices and coriander leaves. An easy dinner recipe for all which is extremely easy and very tasty to enjoy with rice or roti's.",
       },
       {
         author: 'Samantha William',
@@ -46,7 +46,7 @@ class Home extends Component {
         yt: 'EfRpZ3GnvBM',
         category: 'Dinner',
         trending: 2,
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum quis mauris vel aliquet. Aenean bibendum accumsan suscipit. Praesent justo dui, rutrum commodo risus at, cursus aliquet lectus. Mauris ut neque nunc. Etiam ultrices, orci non scelerisque malesuada, justo libero tincidunt nunc, id tempor leo erat a tellus.',
+        desc: 'Hi I love stir fried beef with ginger and scallion (spring onion)! The divine combination of ginger and tender beef is too irresistible - I need a plate of this now with a bowl of rice! *salivating* This is an easy stir-fry dish which I highly recommend anyone to remember the recipe by heart.',
       },
       {
         author: 'John Doe',
@@ -58,7 +58,7 @@ class Home extends Component {
         yt: 'y6gnXQJrB5Y',
         category: 'Breakfast',
         trending: 3,
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum quis mauris vel aliquet. Aenean bibendum accumsan suscipit. Praesent justo dui, rutrum commodo risus at, cursus aliquet lectus. Mauris ut neque nunc. Etiam ultrices, orci non scelerisque malesuada, justo libero tincidunt nunc, id tempor leo erat a tellus.',
+        desc: "Today's recipe is flower-shaped savory bread with vegetable filling. Soft fluffy delicious, the stir-fried vegetable filling is adjustable.",
       },
     ]
     return (
